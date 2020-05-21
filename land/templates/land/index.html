@@ -3,8 +3,7 @@
 {% block central_content %}
     <div class="starter-template">
       <h1>All Our Procucts</h1>
-        <form action="{% url 'buy' %}" method="POST">
-            {% csrf_token %}
+        <form action="{% url 'buy' %}" method="GET">
             <div class="product-list d-flex">
               {% for p in products %}
                     <div class="product">
