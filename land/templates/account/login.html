@@ -11,27 +11,38 @@
 
 <p>{% blocktrans %}If you have not created an account yet, then please
 <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-
-    <form class="login" method="POST" action="{% url 'account_login' %}">
-    {% csrf_token %}
-      <div class="section-field mb-20">
-       <label class="mb-10" for="id_login">User name* </label>
-         <input id="id_login" class="web form-control" type="text" placeholder="User name" name="login" required autocomplete="off">
-      </div>
-      <div class="section-field mb-20">
-       <label class="mb-10" for="id_password">Password* </label>
-         <input id="id_password" class="Password form-control" type="password" placeholder="Password" name="password">
-      </div>
-      <div class="section-field">
-        <div class="form-check mb-30">
-          <input type="checkbox" class="form-check-input" id="id_remember" name="remember">
-          <label class="form-check-label" for="id_remember">Remember me</label>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-3">
+          {% for p in products %}
+            <div>
+              <img src="{{ p.image.url }}" width="60px" alt=""> {{ p.title }} - {{ p.price }}
+            </div>
+          {% endfor %}  
+        </div>
+        <div class="col-8">
+          <form class="login" method="POST" action="{% url 'account_login' %}">
+          {% csrf_token %}
+            <div class="section-field mb-20">
+             <label class="mb-10" for="id_login">User name* </label>
+               <input id="id_login" class="web form-control" type="text" placeholder="User name" name="login" required autocomplete="off">
+            </div>
+            <div class="section-field mb-20">
+             <label class="mb-10" for="id_password">Password* </label>
+               <input id="id_password" class="Password form-control" type="password" placeholder="Password" name="password">
+            </div>
+            <div class="section-field">
+              <div class="form-check mb-30">
+                <input type="checkbox" class="form-check-input" id="id_remember" name="remember">
+                <label class="form-check-label" for="id_remember">Remember me</label>
+              </div>
+            </div>
+            {% if redirect_field_value %}
+              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+            <input class="button" value="Log in" type="submit" />
+          </form>
         </div>
       </div>
-      {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-      {% endif %}
-      <input class="button" value="Log in" type="submit" />
-    </form>
-
+  </div>
 {% endblock %}
