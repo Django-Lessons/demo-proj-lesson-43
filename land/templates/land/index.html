@@ -3,13 +3,17 @@
 {% block central_content %}
     <div class="starter-template">
       <h1>All Our Procucts</h1>
-      <div class="d-flex">
-          {% for p in products %}
-            <div class="product">
-                <img src="{{ p.image.url }}" width="160px" alt="">
-                <div class="title">{{ p.title }}</div>
-                <input type="checkbox" name="product_{{p.id}}">
+        <form>
+            <div class="product-list d-flex">
+              {% for p in products %}
+                    <div class="product">
+                        <img src="{{ p.image.url }}" width="160px" alt="">
+                        <div class="title">{{ p.title }}</div>
+                        <input type="checkbox" value="{{p.id}}" name="product_select">
+                    </div>
+              {% endfor %}
             </div>
-          {% endfor %}
-      </div>
+          <input class="btn btn-success" type="submit" value="Buy" />
+        </form>
+      
 {% endblock central_content %}
