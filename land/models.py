@@ -12,3 +12,6 @@ class Product(models.Model):
     )
 
     image = models.ImageField()
+
+    def __str__(self):
+        return self.title

@@ -2,7 +2,13 @@
 
 {% block central_content %}
     <div class="starter-template">
-      <h1>Bootstrap starter template</h1>
-      <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-    </div>
+      <h1>All Our Procucts</h1>
+      <div>
+          {% for p in products %}
+            <div class="product">
+                <img src="{{ p.image.url }}" width="160px" alt="">
+                {{ p.title }}
+            </div>
+          {% endfor %}
+      </div>
 {% endblock central_content %}

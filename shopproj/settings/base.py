@@ -26,7 +26,8 @@ SECRET_KEY = 'gjcyf1we)9hi_g)x=k@fwpwm8)43w3ij!3ii%c%t!tj)t8)s0='
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+MEDIA_ROOT = '/demo/media'
+MEDIA_URL = '/media/'
 
 # Application definition
 
