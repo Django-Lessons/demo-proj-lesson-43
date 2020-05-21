@@ -1,0 +1,10 @@
+
+.product {
+    outline: 1px solid #dadaee;
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+.product:hover {
+    background-color: #dadaee;
+}

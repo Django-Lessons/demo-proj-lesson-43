@@ -3,11 +3,12 @@
 {% block central_content %}
     <div class="starter-template">
       <h1>All Our Procucts</h1>
-      <div>
+      <div class="d-flex">
           {% for p in products %}
             <div class="product">
                 <img src="{{ p.image.url }}" width="160px" alt="">
-                {{ p.title }}
+                <div class="title">{{ p.title }}</div>
+                <input type="checkbox" name="product_{{p.id}}">
             </div>
           {% endfor %}
       </div>
