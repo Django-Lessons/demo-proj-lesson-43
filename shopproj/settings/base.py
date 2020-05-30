@@ -40,9 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_extensions',
     'allauth',
     'allauth.account',
+    'mod_wsgi.server',
 ]
 
 MIDDLEWARE = [

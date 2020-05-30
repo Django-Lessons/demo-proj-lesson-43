@@ -1,2 +1,5 @@
 django
 django-allauth
+Pillow
+mod_wsgi-httpd
+mod_wsgi
